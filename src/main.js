@@ -1,16 +1,12 @@
-<template>
-  <div id="app">
-    <router-view />
-  </div>
-</template>
+import { createApp } from 'vue'
+import App from './App.vue'
+import router from './router'
 
-<script setup>
-</script>
+// 这里根据你的样式方案，导入全局样式文件，比如 Tailwind、reset.css 等
+import './assets/styles/index.css'
 
-<style>
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  background-color: #f5f7fa;
-}
-</style>
+const app = createApp(App)
+
+app.use(router)
+
+app.mount('#app')
